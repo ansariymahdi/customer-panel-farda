@@ -37,7 +37,8 @@
 			"@/stores": ["stores"],
 			"@/services": ["services"],
 			"@/utils": ["lib/utils"],
-			"@/types": ["types"]
+			"@/types": ["types"],
+			"@/theme": ["theme"]
 		}
 	},
 	"include": [

@@ -131,3 +131,10 @@
 		cursor: pointer;
 	}
 }
+
+
+
+body{
+	  direction: rtl;
+	  font-family: 'Yekan Bakh';
+}

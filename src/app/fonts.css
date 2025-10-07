@@ -1,0 +1,104 @@
+/* @font-face {
+    font-family: 'Yekan Bakh Fat';
+    src: url('YekanBakh-Fat.eot');
+    src: local('YekanBakh-Fat'),
+        url('YekanBakh-Fat.eot?#iefix') format('embedded-opentype'),
+        url('YekanBakh-Fat.woff2') format('woff2'),
+        url('YekanBakh-Fat.woff') format('woff'),
+        url('YekanBakh-Fat.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+} */
+
+@font-face {
+    font-family: YekanBakh;
+    src: url('/fonts/YekanBakh/YekanBakh-Medium.eot');
+    src: local('/fonts/YekanBakh/YekanBakh-Medium'),
+        url('/fonts/YekanBakh/YekanBakh-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/YekanBakh/YekanBakh-Medium.woff2') format('woff2'),
+        url('/fonts/YekanBakh/YekanBakh-Medium.woff') format('woff'),
+        url('/fonts/YekanBakh/YekanBakh-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: YekanBakh;
+    src: url('/fonts/YekanBakh/YekanBakh-Bold.eot');
+    src: local('/fonts/YekanBakh/YekanBakh-Bold'),
+        url('/fonts/YekanBakh/YekanBakh-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/YekanBakh/YekanBakh-Bold.woff2') format('woff2'),
+        url('/fonts/YekanBakh/YekanBakh-Bold.woff') format('woff'),
+        url('/fonts/YekanBakh/YekanBakh-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: YekanBakh;
+    src: url('/fonts/YekanBakh/YekanBakh-Light.eot');
+    src: local('/fonts/YekanBakh/YekanBakh-Light'),
+        url('/fonts/YekanBakh/YekanBakh-Light.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/YekanBakh/YekanBakh-Light.woff2') format('woff2'),
+        url('/fonts/YekanBakh/YekanBakh-Light.woff') format('woff'),
+        url('/fonts/YekanBakh/YekanBakh-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: YekanBakh;
+    src: url('/fonts/YekanBakh/YekanBakh-Heavy.eot');
+    src: local('/fonts/YekanBakh/YekanBakh-Heavy'),
+        url('/fonts/YekanBakh/YekanBakh-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/YekanBakh/YekanBakh-Heavy.woff2') format('woff2'),
+        url('/fonts/YekanBakh/YekanBakh-Heavy.woff') format('woff'),
+        url('/fonts/YekanBakh/YekanBakh-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: YekanBakh;
+    src: url('/fonts/YekanBakh/YekanBakh-Thin.eot');
+    src: local('/fonts/YekanBakh/YekanBakh-Thin'),
+        url('/fonts/YekanBakh/YekanBakh-Thin.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/YekanBakh/YekanBakh-Thin.woff2') format('woff2'),
+        url('/fonts/YekanBakh/YekanBakh-Thin.woff') format('woff'),
+        url('/fonts/YekanBakh/YekanBakh-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: YekanBakh;
+    src: url('/fonts/YekanBakh/YekanBakh-Regular.eot');
+    src: local('/fonts/YekanBakh/YekanBakh-Regular'),
+        url('/fonts/YekanBakh/YekanBakh-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/YekanBakh/YekanBakh-Regular.woff2') format('woff2'),
+        url('/fonts/YekanBakh/YekanBakh-Regular.woff') format('woff'),
+        url('/fonts/YekanBakh/YekanBakh-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yekan Bakh Hairline';
+    src: url('/fonts/YekanBakh/YekanBakh-Hairline.eot');
+    src: local('YekanBakh-Hairline'),
+        url('/fonts/YekanBakh/YekanBakh-Hairline.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/YekanBakh/YekanBakh-Hairline.woff2') format('woff2'),
+        url('/fonts/YekanBakh/YekanBakh-Hairline.woff') format('woff'),
+        url('/fonts/YekanBakh/YekanBakh-Hairline.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

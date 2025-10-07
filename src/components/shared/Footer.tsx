@@ -1,12 +1,9 @@
-import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Link from "next/link"
 
 import { Turkiye } from "@/components/icons"
 
 export default function Footer() {
-	const t = useTranslations("Footer")
-
 	return (
 		<footer>
 			<div className="container">

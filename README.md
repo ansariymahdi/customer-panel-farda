@@ -13,7 +13,6 @@ With this template, you get all the awesomeness you need:
 - 💎 Type checking [TypeScript](https://www.typescriptlang.org/)
 - 🎨 Styled using [Tailwind CSS](https://tailwindcss.com/)
 - 📦 State management with [Zustand](https://zustand-demo.pmnd.rs/)
-- 🗺️ [next-intl](https://next-intl.dev/) for internationalization
 - 🧩 UI Components built with [shadcn/ui](https://ui.shadcn.com/)
 - 🔄 Data Fetching, Caching and Mutation with [TanStack Query](https://tanstack.com/query/latest)
 - ⌨️ Form handling with [React Hook Form](https://react-hook-form.com/)
@@ -25,7 +24,6 @@ With this template, you get all the awesomeness you need:
 - 🚨 Error tracking with [Sentry](https://sentry.io/)
 - 📊 Analytics with [Google Analytics](https://analytics.google.com/)
 - ⏳ Loading UI using [Skeleton Components](https://ui.shadcn.com/docs/components/skeleton)
-- 🌓 Dark theme with [next-themes](https://npmjs.com/package/next-themes)
 - 💡 [Absolute Imports](https://nextjs.org/docs/pages/building-your-application/configuring/absolute-imports-and-module-aliases) with `@` prefix
 - ✨ Beautiful and consistent icons from [Lucide](https://lucide.dev/)
 - 🐶 [Husky](https://typicode.github.io/husky/) for Git Hooks

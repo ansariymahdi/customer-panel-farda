@@ -1,18 +1,19 @@
 "use client"
 
 import { ReactNode } from "react"
-import { ThemeProvider } from "next-themes"
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { Toaster } from "sonner"
 
+import MuiProvider from "./mui-provider"
+
 const queryClient = new QueryClient()
 
-export function Providers({ children }: { children: ReactNode }) {
+export function Providers({ children }: Readonly<{ children: ReactNode }>) {
 	return (
-		<ThemeProvider attribute="class">
+		<MuiProvider>
 			<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
 			<Toaster />
-		</ThemeProvider>
+		</MuiProvider>
 	)
 }

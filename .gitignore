@@ -45,3 +45,13 @@ next-env.d.ts
 
 *storybook.log
 storybook-static
+
+
+
+#lock files
+*.lock
+package-lock.json
+pnpm-lock.yaml
+
+.qodo
+
