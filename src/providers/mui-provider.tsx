@@ -6,7 +6,7 @@ import components from "@/theme/components"
 import palette from "@/theme/palette"
 import shadows from "@/theme/shadows"
 import typography from "@/theme/typography"
-import { createTheme, CssBaseline, ThemeProvider } from "@mui/material"
+import { createTheme, ThemeProvider } from "@mui/material"
 import { faIR } from "@mui/material/locale"
 
 const theme = createTheme(

@@ -13,7 +13,7 @@ const MobileForm: FC = () => {
 	// const { onChangeStep, onSendOtp, isLoading } = useLogin()
 	const phoneInputRef = useRef<HTMLInputElement>(null)
 
-	const submitForm = async (phoneNumber: string, nationalCode: string) => {
+	const submitForm = async () => {
 		// onSendOtp(phoneNumber, nationalCode)
 	}
 
@@ -23,8 +23,8 @@ const MobileForm: FC = () => {
 				phoneNumber: "",
 				nationalCode: ""
 			}}
-			onSubmit={(values) => {
-				submitForm(values.phoneNumber, values.nationalCode)
+			onSubmit={() => {
+				submitForm()
 			}}
 			validateOnBlur
 			// validationSchema={validationSchema}

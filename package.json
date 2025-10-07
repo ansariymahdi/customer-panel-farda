@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "prepare": "husky",
     "svgr": "svgr --typescript --icon --title-prop --ref --no-prettier --out-dir src/components/icons src/assets/icons",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
