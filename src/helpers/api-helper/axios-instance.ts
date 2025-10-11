@@ -1,9 +1,9 @@
-import axios from "axios"
+import axios, { AxiosRequestConfig } from "axios"
 
 import { API_CONFIG, CONTENT_TYPES } from "@/constants"
 import { setupInterceptors } from "@/constants/config/api"
 
-const axiosInstance = axios.create({
+export const axiosInstance = axios.create({
 	baseURL: API_CONFIG.BASE_URL,
 	timeout: API_CONFIG.TIMEOUT,
 	headers: {
@@ -11,6 +11,25 @@ const axiosInstance = axios.create({
 	}
 })
 
-setupInterceptors(axiosInstance)
+export const customInstance = <T>(
+	config: AxiosRequestConfig,
+	options?: AxiosRequestConfig
+): Promise<T> => {
+	const source = axios.CancelToken.source()
+	const promise = axiosInstance({
+		...config,
+		...options,
+		cancelToken: source.token
+	}).then(({ data }) => data?.data)
 
-export default axiosInstance
+	// @ts-ignore
+	promise.cancel = () => {
+		source.cancel("Query was cancelled")
+	}
+
+	return promise
+}
+
+export const client = setupInterceptors(axiosInstance)
+
+// export default axiosInstance

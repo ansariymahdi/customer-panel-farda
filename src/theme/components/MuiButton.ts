@@ -1,9 +1,6 @@
 import { Components } from "@mui/material/styles"
-import { color } from "storybook/internal/theming"
 
-import theme from ".."
-
-const MuiButton: Components<typeof theme>["MuiButton"] = {
+const MuiButton: Components<any>["MuiButton"] = {
 	styleOverrides: {
 		root: ({ theme, ownerState }) =>
 			theme.unstable_sx({

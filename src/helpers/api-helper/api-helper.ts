@@ -1,4 +1,4 @@
-import axiosInstance from "@/helpers/api-helper/axios-instance"
+import { axiosInstance } from "@/helpers/api-helper/axios-instance"
 
 import { ApiConfig, ApiResponseType } from "@/types"
 

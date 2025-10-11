@@ -1,10 +1,8 @@
 import { Components } from "@mui/material"
 
-import theme from ".."
-
 // import ArrowDropdownGray from "@/icons/ArrowDropdownGray";
 
-const MuiAutocomplete: Components<typeof theme>["MuiAutocomplete"] = {
+const MuiAutocomplete: Components<any>["MuiAutocomplete"] = {
 	styleOverrides: {
 		root: ({ theme }) =>
 			theme.unstable_sx({

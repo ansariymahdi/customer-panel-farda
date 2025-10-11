@@ -1,46 +1,73 @@
 "use client"
 
 import { FC, useRef } from "react"
+import { useDispatch } from "react-redux"
 
-import { Box, Button, Grid, TextField, Typography } from "@mui/material"
+import { LoadingButton } from "@mui/lab"
+import { Box, Grid, TextField, Typography } from "@mui/material"
 import Stack from "@mui/material/Stack"
 import { Formik } from "formik"
+import { toast } from "sonner"
+import * as Yup from "yup"
+
+import { setLoginStep } from "@/stores/reducers/login-step/login-step"
+import { usePostApiV1CustomerAuthenticationOTPSendCode } from "@/hooks/api-hooks/authentication/authentication"
 
 import ArrowLeftIcon from "@/components/icons/ArrowLeftIcon"
 import UserIcon from "@/components/icons/UserIcon"
 
+const validationSchema = Yup.object({
+	phoneNumber: Yup.string()
+		.matches(/^09\d{9}$/, "شماره موبایل معتبر نیست")
+		.required("شماره موبایل الزامی است")
+})
+
 const MobileForm: FC = () => {
-	// const { onChangeStep, onSendOtp, isLoading } = useLogin()
+	const dispatch = useDispatch()
+
 	const phoneInputRef = useRef<HTMLInputElement>(null)
 
-	const submitForm = async () => {
-		// onSendOtp(phoneNumber, nationalCode)
+	const { mutateAsync, isPending } =
+		usePostApiV1CustomerAuthenticationOTPSendCode()
+
+	// ✅ Form submission handler with value phone-number
+	const submitForm = async (values: { phoneNumber: string }) => {
+		try {
+			await mutateAsync({
+				data: {
+					mobileNumber: values.phoneNumber
+				}
+			})
+
+			toast.success("کد تایید ارسال شد")
+			dispatch(
+				setLoginStep({
+					loginStep: "OtpStep",
+					mobileNumber: values.phoneNumber
+				})
+			)
+		} catch (error) {
+			toast.error("ارسال کد تایید با خطا مواجه شد")
+		}
 	}
 
 	return (
 		<Formik
 			initialValues={{
-				phoneNumber: "",
-				nationalCode: ""
+				phoneNumber: ""
 			}}
-			onSubmit={() => {
-				submitForm()
-			}}
+			onSubmit={submitForm}
+			validationSchema={validationSchema}
 			validateOnBlur
-			// validationSchema={validationSchema}
-			enableReinitialize
 		>
 			{(formik) => (
 				<Stack
 					component="form"
-					sx={{
-						justifyContent: "center",
-						alignItems: "center"
-					}}
+					sx={{ justifyContent: "center", alignItems: "center" }}
 					onSubmit={formik.handleSubmit}
 				>
 					<Box
-						sx={{
+						sx={(theme) => ({
 							backgroundColor: "#EEF0F296",
 							width: "380px",
 							height: "170px",
@@ -51,8 +78,16 @@ const MobileForm: FC = () => {
 							borderRadius: 2,
 							gap: 4,
 							display: "flex",
-							flexDirection: "column"
-						}}
+							flexDirection: "column",
+							[theme.breakpoints.down("tablet")]: {
+								width: 300,
+								p: 2
+							},
+							[theme.breakpoints.down("mobile")]: {
+								width: 300,
+								p: 2
+							}
+						})}
 					>
 						<Stack sx={{ alignItems: "center", mt: 2 }} gap={1}>
 							<Typography variant="h6">
@@ -63,20 +98,12 @@ const MobileForm: FC = () => {
 							<Grid columns={4}>
 								<TextField
 									name="phoneNumber"
-									disabled={false}
+									disabled={isPending}
 									inputRef={phoneInputRef}
-									sx={{
-										color: "grey.900"
-									}}
+									sx={{ color: "grey.900" }}
 									slotProps={{
 										input: {
-											endAdornment: (
-												<UserIcon
-													sx={{
-														color: "grey.900"
-													}}
-												/>
-											)
+											endAdornment: <UserIcon sx={{ color: "grey.900" }} />
 										}
 									}}
 									value={formik.values.phoneNumber}
@@ -94,26 +121,23 @@ const MobileForm: FC = () => {
 							</Grid>
 						</Stack>
 					</Box>
-					<Button fullWidth={false}>
-						تایید و ادامه
-						<ArrowLeftIcon />
-					</Button>
-					{/* <CustomLoadingButton
-								type="submit"
-								variant="contained"
-								disableRipple
 
-								disableElevation
-								sx={{
-									borderRadius: "8px ",
-									gap: 1,
-									backgroundColor: "primary.main"
-                  }}
-								loading={isLoading}
-                >
-								تایید و ادامه
-								<ArrowLeftIcon />
-							</CustomLoadingButton> */}
+					<LoadingButton
+						type="submit"
+						variant="contained"
+						disabled={isPending}
+						sx={{
+							borderRadius: "8px",
+							gap: 1,
+							backgroundColor: "primary.main"
+						}}
+						fullWidth={false}
+						disableElevation
+						loading={isPending}
+					>
+						{"تایید و ادامه"}
+						<ArrowLeftIcon />
+					</LoadingButton>
 				</Stack>
 			)}
 		</Formik>

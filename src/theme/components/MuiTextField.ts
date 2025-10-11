@@ -1,8 +1,6 @@
 import { Components } from "@mui/material/styles"
 
-import theme from ".."
-
-const MuiTextField: Components<typeof theme>["MuiTextField"] = {
+const MuiTextField: Components<any>["MuiTextField"] = {
 	defaultProps: {
 		variant: "outlined",
 		fullWidth: true

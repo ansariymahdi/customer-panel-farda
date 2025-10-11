@@ -1,9 +1,7 @@
-import { Components } from "@mui/material/styles";
-import theme from "..";
+import { Components } from "@mui/material/styles"
 
-const MuiList: Components<typeof theme>['MuiList'] = {
-    styleOverrides: {
-    },
+const MuiList: Components<any>["MuiList"] = {
+	styleOverrides: {}
 }
 
 export default MuiList
